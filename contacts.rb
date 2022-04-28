@@ -19,7 +19,18 @@ end
 
 def remove_strawberry(contacts)
   # your code here!
+  contacts.each do |contact, contact_details|
+    if contact == "Freddy Mercury"
+      contact_details.each do |more_data, data|
+        if more_data == :favorite_ice_cream_flavors
+          data.delete_if {|flavor| flavor == "strawberry"}
+        end
+      end
+   end
+  end
 end
+
+binding.pry
 
 # print the output to the terminal for inspection
 pp remove_strawberry(contacts)
